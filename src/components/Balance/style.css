@@ -1,0 +1,16 @@
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+}
+
+.balance {
+  display: flex;
+  align-items: center; 
+  gap: 10px
+}
+
+.balance img {
+  height: 30px;
+  width: 30px;
+ 
+}

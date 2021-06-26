@@ -1,13 +1,10 @@
-import useAuth from '../../hooks/useAuth';
+import Balance from '../../components/Balance';
 
 function Painel() {
-  const { id, secret } = useAuth();
-
   return (
     <>
       <h1>Painel</h1>
-      <p>{id}</p>
-      <p>{secret}</p>
+      <Balance />
     </>
   );
 }
