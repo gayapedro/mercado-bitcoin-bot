@@ -6,6 +6,7 @@ import crypto from 'crypto';
 export default function useAuthProvider() {
   const [id, setId] = useState(localStorage.getItem('id'));
   const [secret, setSecret] = useState(localStorage.getItem('secret'));
+  const [isStarted, setIsStarted] = useState(false);
 
   const logar = (userId, userSecret, callback) => {
     setId(userId);
@@ -78,6 +79,8 @@ export default function useAuthProvider() {
     logar,
     deslogar,
     estaLogado,
+    setIsStarted,
+    isStarted,
     id,
     secret,
   };

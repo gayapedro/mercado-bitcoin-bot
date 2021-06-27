@@ -1,31 +1,16 @@
-.cabecalho {
+.time {
   display: flex;
   padding: 20px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  width: min-content;
+  width: max-content;
+  gap: 20px;
+  align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.05);
   font-family: 'Roboto Mono', monospace;
 }
 
-.balance {
-  display: flex;
-  align-items: center; 
-  gap: 10px
-}
-
-.balance img {
-  height: 30px;
-  width: 30px;
- 
-}
-
-.balance .imgreal {
-  height: 18px;
-  width: 18px;
-}
-
-.total {
+.decorrido {
   letter-spacing: 2px;
   font-weight: 600;
   color: #666666;

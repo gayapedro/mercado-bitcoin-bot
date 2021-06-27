@@ -34,7 +34,7 @@ function Balance() {
         <p>{`${balanceBtc}`}</p>
         <img className="imgreal" src={real} alt="real" />
         <p>{`${balanceBrl.toFixed(2)}`}</p>
-        <p>Total</p>
+        <p className="total">Total</p>
         <img className="imgreal" src={real} alt="real" />
         <p>{`${(lastPrice * balanceBtc + balanceBrl).toFixed(2)}`}</p>
       </div>
