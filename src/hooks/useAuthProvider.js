@@ -21,6 +21,11 @@ export default function useAuthProvider() {
     if (callback) callback();
   };
 
+  const estaLogado = () => {
+    if (id && secret) return true;
+    return false;
+  };
+
   const fetchTapi = async (method, queryParams) => {
     const now = String(Math.floor(new Date().getTime() / 1000));
     const host = 'https://www.mercadobitcoin.net';
@@ -72,6 +77,7 @@ export default function useAuthProvider() {
     fetchData,
     logar,
     deslogar,
+    estaLogado,
     id,
     secret,
   };

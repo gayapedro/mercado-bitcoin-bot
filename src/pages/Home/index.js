@@ -12,7 +12,7 @@ function Home() {
 
   const onSubmit = (data) => {
     console.log(data);
-    logar(data.id, data.secret, () => history.push('/painel'));
+    logar(data.id, data.secret, () => history.push('/'));
   };
 
   return (

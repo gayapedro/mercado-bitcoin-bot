@@ -12,10 +12,10 @@ import Painel from './pages/Painel';
 import { AuthProvider } from './context/AuthContext';
 import useAuth from './hooks/useAuth';
 
-function RotasProtegidas({ children }) {
+function RotasProtegidas(props) {
   const { id, secret } = useAuth();
   return (
-    <Route render={() => ((id && secret) ? children : <Redirect to="/" />)} />
+    <Route render={() => ((id && secret) ? props.children : <Redirect to="/" />)} />
   );
 }
 
@@ -24,9 +24,9 @@ function Routes() {
     <AuthProvider>
       <Router>
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/login" exact component={Home} />
           <RotasProtegidas>
-            <Route path="/painel" exact component={Painel} />
+            <Route path="/" exact component={Painel} />
           </RotasProtegidas>
         </Switch>
       </Router>

@@ -1,6 +1,13 @@
 .cabecalho {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  width: min-content;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .balance {
@@ -13,4 +20,9 @@
   height: 30px;
   width: 30px;
  
+}
+
+.balance .imgreal {
+  height: 20px;
+  width: 20px;
 }

@@ -8,15 +8,20 @@ function Balance() {
   const [balanceBtc, setBalanceBtc] = useState(0);
   const [balanceBrl, setBalanceBrl] = useState(0);
   const [lastPrice, setLastPrice] = useState(0);
-  const { fetchTapi, fetchData } = useAuth();
+  const { fetchTapi, fetchData, secret } = useAuth();
 
   useEffect(() => {
     const intervalId = setInterval(async () => {
-      const balance = await fetchTapi('get_account_info');
-      const cotacao = await fetchData('ticker');
-      setBalanceBtc(Number(balance.balance.btc.available));
-      setBalanceBrl(Number(balance.balance.brl.available));
-      setLastPrice(Number(cotacao));
+      try {
+        const balance = await fetchTapi('get_account_info');
+        const cotacao = await fetchData('ticker');
+        setBalanceBtc(Number(balance.balance.btc.available));
+        setBalanceBrl(Number(balance.balance.brl.available));
+        setLastPrice(Number(cotacao));
+      } catch (error) {
+        console.log(error.message);
+        console.log(secret);
+      }
     }, 5000);
 
     return () => clearInterval(intervalId);
@@ -27,10 +32,10 @@ function Balance() {
       <div className="balance">
         <img src={bitcoin} alt="bitcoin" />
         <p>{`${balanceBtc}`}</p>
-        <img src={real} alt="real" />
+        <img className="imgreal" src={real} alt="real" />
         <p>{`${balanceBrl.toFixed(2)}`}</p>
         <p>Total</p>
-        <img src={real} alt="real" />
+        <img className="imgreal" src={real} alt="real" />
         <p>{`${(lastPrice * balanceBtc + balanceBrl).toFixed(2)}`}</p>
       </div>
     </div>
