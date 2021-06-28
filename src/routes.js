@@ -15,7 +15,7 @@ import useAuth from './hooks/useAuth';
 function RotasProtegidas(props) {
   const { id, secret } = useAuth();
   return (
-    <Route render={() => ((id && secret) ? props.children : <Redirect to="/" />)} />
+    <Route render={() => ((id && secret) ? props.children : <Redirect to="/login" />)} />
   );
 }
 

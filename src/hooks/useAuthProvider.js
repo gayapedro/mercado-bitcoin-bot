@@ -36,14 +36,14 @@ export default function useAuthProvider() {
       query = ({ ...query, ...queryParams });
     }
     const queryString = qs.stringify(query);
-    const teste = crypto.createHmac('sha512', secret)
+    const h = crypto.createHmac('sha512', secret)
       .update(`${endpoint}?${queryString}`)
       .digest('hex');
 
     const config = {
       headers: {
         'TAPI-ID': id,
-        'TAPI-MAC': teste,
+        'TAPI-MAC': h,
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/x-www-form-urlencoded',
       },
