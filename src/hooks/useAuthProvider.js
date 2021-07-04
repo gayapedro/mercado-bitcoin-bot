@@ -44,8 +44,6 @@ export default function useAuthProvider() {
       headers: {
         'TAPI-ID': id,
         'TAPI-MAC': h,
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/x-www-form-urlencoded',
       },
     };
     try {
@@ -60,8 +58,6 @@ export default function useAuthProvider() {
     const address = `https://www.mercadobitcoin.net/api/BTC/${method}/`;
     const config = {
       headers: {
-
-        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
       },
     };
