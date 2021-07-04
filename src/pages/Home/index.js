@@ -1,6 +1,14 @@
 import {
-  TextField, Button, Snackbar, Backdrop, CircularProgress,
+  TextField,
+  Button,
+  Snackbar,
+  Backdrop,
+  CircularProgress,
+  AppBar,
+  Toolbar,
+  IconButton,
 } from '@material-ui/core';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { Alert } from '@material-ui/lab';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -16,7 +24,7 @@ function Home() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const { logar } = useAuth();
+  const { logar, id } = useAuth();
   const classes = useStyles();
   const history = useHistory();
   const { register, handleSubmit } = useForm();
@@ -70,6 +78,24 @@ function Home() {
 
   return (
     <>
+      <AppBar
+        position="fixed"
+        className={classes.appBar}
+      >
+        <Toolbar className={classes.toolbar}>
+          <p className={classes.title}>Gb</p>
+          {id && (
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            className={classes.menuButton}
+          >
+            <ExitToAppIcon />
+          </IconButton>
+          )}
+        </Toolbar>
+      </AppBar>
       <form
         className={classes.rootForm}
         noValidate
