@@ -42,7 +42,7 @@ function Home() {
     setErrorMessage('');
     setLoading(true);
     const now = String(Math.floor(new Date().getTime() / 1000));
-    const host = 'https://www.mercadobitcoin.net';
+    const host = 'https://majestic-arches-55956.herokuapp.com/https://www.mercadobitcoin.net';
     const endpoint = '/tapi/v3/';
     const query = { tapi_method: 'get_account_info', tapi_nonce: now };
 

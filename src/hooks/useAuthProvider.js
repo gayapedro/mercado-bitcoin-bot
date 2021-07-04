@@ -29,7 +29,7 @@ export default function useAuthProvider() {
 
   const fetchTapi = async (method, queryParams) => {
     const now = String(Math.floor(new Date().getTime() / 1000));
-    const host = 'https://www.mercadobitcoin.net';
+    const host = 'https://majestic-arches-55956.herokuapp.com/https://www.mercadobitcoin.net';
     const endpoint = '/tapi/v3/';
     let query = { tapi_method: method, tapi_nonce: now };
     if (queryParams) {
